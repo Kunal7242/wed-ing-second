@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rushikesh &amp; Prajakta — Wedding Invitation · 19th July 2026</title>
+  <meta name="description" content="Join us in celebrating the wedding of Rushikesh &amp; Prajakta on 19th July 2026 at Fulai Garden Hall." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rushikesh &amp; Prajakta — Wedding Invitation · 19th July 2026" />
+  <meta property="og:description" content="Join us in celebrating the wedding of Rushikesh &amp; Prajakta on 19th July 2026 at Fulai Garden Hall." />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Local Self-Hosted Fonts -->
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+
+  <!-- Google Fonts Fallback / Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Great+Vibes&display=swap" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <style>
+    :root {
+      --font-script: "Great Vibes", cursive;
+      --font-display: "Cormorant Garamond", serif;
+      --font-serif: "Cormorant Garamond", serif;
+      --font-cinzel: "Cinzel", serif;
+
+      --background: oklch(0.97 0.02 90);
+      --foreground: oklch(0.25 0.03 30);
+      --cream: oklch(0.97 0.02 90);
+      --sage: oklch(0.86 0.05 130);
+      --sage-soft: oklch(0.9 0.04 130);
+      --sage-deep: oklch(0.38 0.06 145);
+      --gold: oklch(0.78 0.12 80);
+      --gold-deep: oklch(0.62 0.13 65);
+      --rose: oklch(0.65 0.18 18);
+      --rose-deep: oklch(0.5 0.18 18);
+      --maroon: oklch(0.27 0.05 40);
+    }
+
+    /* Smooth envelope transition */
+    #envelope-screen {
+      transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    }
+    #envelope-screen.hidden-screen {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.95);
+      display: none;
+    }
+    #invitation-content {
+      transition: opacity 0.6s ease-in-out;
+    }
+    #invitation-content.hidden-screen {
+      display: none;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body class="selection:bg-gold/30 selection:text-maroon">
+
+  <div class="relative">
+    <!-- Floating Petals & Butterflies Background (18 items) -->
+    <div id="floating-petals-container" class="pointer-events-none fixed inset-0 z-10 overflow-hidden"></div>
+
+    <!-- Background Audio -->
+    <audio id="bg-audio" src="assets/background-DG42cm82.mp3" preload="auto" loop></audio>
+
+    <!-- Floating Audio Control Button -->
+    <button id="music-btn" aria-label="Play music" class="fixed bottom-5 right-5 z-50 w-12 h-12 rounded-full bg-maroon/80 backdrop-blur text-cream shadow-lg flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+      🔇
+    </button>
+
+    <!-- ==================== 1. ENVELOPE COVER SCREEN ==================== -->
+    <div id="envelope-screen" class="min-h-screen w-full flex flex-col items-center justify-center relative px-6" style="background: linear-gradient(135deg, rgb(201, 219, 189), rgb(170, 191, 155));">
+      <!-- Decorative Corner Elements -->
+      <span class="absolute top-6 left-6 text-3xl opacity-70 animate-drift">🌸</span>
+      <span class="absolute top-8 right-10 text-2xl opacity-60 animate-drift" style="animation-delay: 1s;">🌼</span>
+      <span class="absolute bottom-8 left-10 text-3xl opacity-70 animate-drift" style="animation-delay: 2s;">🌿</span>
+      <span class="absolute bottom-6 right-6 text-3xl opacity-70 animate-drift" style="animation-delay: 0.5s;">🌿</span>
+
+      <!-- Interactive Envelope Button -->
+      <button id="open-envelope-btn" aria-label="Open invitation" class="relative group transition-transform duration-500 hover:scale-105 cursor-pointer" style="perspective: 1000px;">
+        <img alt="Wedding invitation envelope" class="w-[240px] sm:w-[360px] md:w-[420px] h-auto drop-shadow-2xl" src="assets/envelope-PE3Id_YU.png" />
+        <span class="absolute inset-0 flex items-center justify-center">
+          <span class="w-16 h-16 sm:w-24 sm:h-24 rounded-full gradient-gold shadow-gold animate-shimmer flex items-center justify-center">
+            <span class="font-cinzel text-[10px] sm:text-xs text-white/90">R &amp; P</span>
+          </span>
+        </span>
+      </button>
+
+      <!-- Invitation Heading and Prompt -->
+      <div class="mt-8 sm:mt-10 text-center animate-fade-up delay-300 px-4">
+        <h2 class="font-script text-3xl sm:text-5xl text-sage-deep" style="color: oklch(0.38 0.06 145);">You're Invited</h2>
+        <p class="mt-2 text-sage-deep/80 italic tracking-wide text-sm sm:text-base">Tap the envelope to open your invitation</p>
+      </div>
+    </div>
+
+    <!-- ==================== 2. MAIN INVITATION CONTENT ==================== -->
+    <main id="invitation-content" class="hidden-screen animate-fade-in">
+
+      <!-- Hero Section -->
+      <section class="relative min-h-screen w-full flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16 overflow-hidden" style="background-image: url('assets/hero-CH_OEmow.jpg'); background-size: cover; background-position: center center;">
+        <div class="relative z-10 w-full max-w-2xl text-center animate-fade-up">
+          <img alt="Ganesha" class="mx-auto w-20 sm:w-28 mb-4 drop-shadow" src="assets/ganesh-C8xSsSOL.png" />
+          <p class="font-cinzel text-rose-deep tracking-widest text-xs sm:text-base">‖ Shree Ganeshaya Namah ‖</p>
+          <p class="mt-6 sm:mt-8 text-rose-deep/90 font-serif text-sm sm:text-lg leading-relaxed italic px-2">
+            We cordially invite you to witness the beginning of our forever and celebrate the wedding ceremony of
+          </p>
+
+          <!-- Groom -->
+          <h1 class="mt-5 font-script text-rose text-5xl sm:text-7xl md:text-8xl leading-none break-words">Rakesh</h1>
+          <p class="mt-3 text-foreground/85 text-xs sm:text-base">S/o Mr. Sanjay Deshmukh</p>
+          <p class="text-foreground/85 text-xs sm:text-base">&amp; Mrs. Seema Deshmukh</p>
+
+          <p class="mt-5 font-script text-rose-deep text-2xl sm:text-3xl">with</p>
+
+          <!-- Bride -->
+          <h1 class="mt-2 font-script text-rose text-5xl sm:text-7xl md:text-8xl leading-none break-words">Priti</h1>
+          <p class="mt-3 text-foreground/85 text-xs sm:text-base">D/o Mr. Dasharath Yadav</p>
+          <p class="text-foreground/85 text-xs sm:text-base">&amp; Mrs. Ujjwala Yadav</p>
+        </div>
+      </section>
+
+      <!-- Countdown & Interactive Scratch Card Section -->
+      <section class="relative py-14 sm:py-20 px-4 sm:px-6 bg-sage-soft text-center">
+        <div class="mt-2">
+          <div class="relative mx-auto select-none" style="max-width: 560px; width: 100%;">
+            <div class="relative w-full overflow-hidden rounded-2xl border border-gold/40 shadow-md bg-cream/70" style="height: 200px;">
+              <!-- Revealed Content: Save the Date & Countdown -->
+              <div class="absolute inset-0 flex items-center justify-center px-4 text-center">
+                <div class="flex flex-col items-center justify-center gap-3 sm:gap-4 py-4 sm:py-6 w-full px-2 sm:px-4">
+                  <p class="font-cinzel tracking-[0.3em] text-sage-deep text-[10px] sm:text-sm">SAVE THE DATE</p>
+                  <h2 class="font-script text-rose text-4xl sm:text-6xl leading-none">19th July 2026</h2>
+                  <span class="text-gold-deep text-lg">❀</span>
+                  <div class="grid grid-cols-4 gap-2 sm:gap-4 w-full mt-0">
+                    <div class="rounded-lg sm:rounded-xl bg-cream/90 border border-gold/30 py-2.5 sm:py-5 shadow-sm">
+                      <div id="days-val" class="font-cinzel text-xl sm:text-3xl md:text-4xl text-rose-deep">00</div>
+                      <div class="mt-1 text-[9px] sm:text-xs tracking-widest text-sage-deep/80 uppercase">Days</div>
+                    </div>
+                    <div class="rounded-lg sm:rounded-xl bg-cream/90 border border-gold/30 py-2.5 sm:py-5 shadow-sm">
+                      <div id="hours-val" class="font-cinzel text-xl sm:text-3xl md:text-4xl text-rose-deep">00</div>
+                      <div class="mt-1 text-[9px] sm:text-xs tracking-widest text-sage-deep/80 uppercase">Hours</div>
+                    </div>
+                    <div class="rounded-lg sm:rounded-xl bg-cream/90 border border-gold/30 py-2.5 sm:py-5 shadow-sm">
+                      <div id="minutes-val" class="font-cinzel text-xl sm:text-3xl md:text-4xl text-rose-deep">00</div>
+                      <div class="mt-1 text-[9px] sm:text-xs tracking-widest text-sage-deep/80 uppercase">Minutes</div>
+                    </div>
+                    <div class="rounded-lg sm:rounded-xl bg-cream/90 border border-gold/30 py-2.5 sm:py-5 shadow-sm">
+                      <div id="seconds-val" class="font-cinzel text-xl sm:text-3xl md:text-4xl text-rose-deep">00</div>
+                      <div class="mt-1 text-[9px] sm:text-xs tracking-widest text-sage-deep/80 uppercase">Seconds</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Scratch Canvas Overlay -->
+              <canvas id="scratch-canvas" class="absolute inset-0 h-full w-full touch-none cursor-grab transition-opacity duration-700 opacity-100" style="touch-action: none;"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Events Schedule Section -->
+      <section class="relative py-14 sm:py-20 px-4 bg-sage-soft/60">
+        <div class="text-center">
+          <h2 class="font-script text-rose text-4xl sm:text-6xl">Events Schedule</h2>
+          <span class="block mt-2 text-gold-deep">❀</span>
+        </div>
+
+        <div class="mt-10 sm:mt-12 grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+
+          <!-- 1. Sangeet -->
+          <article class="relative rounded-2xl overflow-hidden shadow-xl mx-auto w-full max-w-md aspect-[9/16] flex flex-col justify-between pb-4" style="background-image: url('assets/bg-sangeet-DAJMoitw.jpg'); background-size: cover; background-position: center center;">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 text-center pt-8 sm:pt-12 px-4">
+              <h3 class="font-script text-white text-4xl sm:text-5xl drop-shadow-lg break-words">Sangeet</h3>
+              <p class="mt-1 italic text-white/95 text-xs sm:text-sm">A spirited night of song, dance and laughter</p>
+              <span class="block mt-2 text-white/80">❀</span>
+              <div class="mt-3 sm:mt-5 space-y-2 sm:space-y-3 text-white">
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Date</p>
+                  <p class="font-serif text-sm sm:text-base">FRI · July 17, 2026</p>
+                </div>
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Time</p>
+                  <p class="font-serif text-sm sm:text-base">08:00 PM onwards</p>
+                </div>
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Venue</p>
+                  <p class="font-serif text-xs sm:text-sm px-2 line-clamp-2">Vikhale, Khatav Taluka, Satara</p>
+                </div>
+              </div>
+              <div class="mt-4 text-rose text-xl">🦋</div>
+            </div>
+            <div class="relative z-10 w-full flex justify-center mt-auto">
+              <img alt="Sangeet couple" class="block h-auto pointer-events-none drop-shadow-md select-none" src="assets/couple-sangeet-CFt01867.png" style="width: 65%;" />
+            </div>
+          </article>
+
+          <!-- 2. Gavdev -->
+          <article class="relative rounded-2xl overflow-hidden shadow-xl mx-auto w-full max-w-md aspect-[9/16] flex flex-col justify-between pb-4" style="background-image: url('assets/bg-gavdev-BrnUgrNH.jpg'); background-size: cover; background-position: center center;">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 text-center pt-8 sm:pt-12 px-4">
+              <h3 class="font-script text-white text-4xl sm:text-5xl drop-shadow-lg break-words">Gavdev</h3>
+              <p class="mt-1 italic text-white/95 text-xs sm:text-sm">Seeking blessings from the village deity</p>
+              <span class="block mt-2 text-white/80">❀</span>
+              <div class="mt-3 sm:mt-5 space-y-2 sm:space-y-3 text-white">
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Date</p>
+                  <p class="font-serif text-sm sm:text-base">SAT · July 18, 2026</p>
+                </div>
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Time</p>
+                  <p class="font-serif text-sm sm:text-base">07:00 PM onwards</p>
+                </div>
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Venue</p>
+                  <p class="font-serif text-xs sm:text-sm px-2 line-clamp-2">Vikhale, Khatav Taluka, Satara</p>
+                </div>
+              </div>
+              <div class="mt-4 text-rose text-xl">🦋</div>
+            </div>
+            <div class="relative z-10 w-full flex justify-center mt-auto">
+              <img alt="Gavdev couple" class="block h-auto pointer-events-none drop-shadow-md select-none" src="assets/couple.gavdev-Dd_naWF0.png" style="width: 65%;" />
+            </div>
+          </article>
+
+          <!-- 3. Haldi -->
+          <article class="relative rounded-2xl overflow-hidden shadow-xl mx-auto w-full max-w-md aspect-[9/16] flex flex-col justify-between pb-4" style="background-image: url('assets/bg-haldi-BVf1fdwu.jpg'); background-size: cover; background-position: center center;">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 text-center pt-8 sm:pt-12 px-4">
+              <h3 class="font-script text-white text-4xl sm:text-5xl drop-shadow-lg break-words">Haldi</h3>
+              <p class="mt-1 italic text-white/95 text-xs sm:text-sm">A joyful morning of haldi, blessings and laughter</p>
+              <span class="block mt-2 text-white/80">❀</span>
+              <div class="mt-3 sm:mt-5 space-y-2 sm:space-y-3 text-white">
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Date</p>
+                  <p class="font-serif text-sm sm:text-base">SUN · July 19, 2026</p>
+                </div>
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Time</p>
+                  <p class="font-serif text-sm sm:text-base">11:00 AM onwards</p>
+                </div>
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Venue</p>
+                  <p class="font-serif text-xs sm:text-sm px-2 line-clamp-2">Fulai Garden, Zirapwadi, Phaltan, Satara</p>
+                </div>
+              </div>
+              <div class="mt-4 text-rose text-xl">🦋</div>
+            </div>
+            <div class="relative z-10 w-full flex justify-center mt-auto">
+              <img alt="Haldi couple" class="block h-auto pointer-events-none drop-shadow-md select-none" src="assets/couple-haldi-ByOdIUZL.png" style="width: 65%;" />
+            </div>
+          </article>
+
+          <!-- 4. Sapthapadi -->
+          <article class="relative rounded-2xl overflow-hidden shadow-xl mx-auto w-full max-w-md aspect-[9/16] flex flex-col justify-between pb-4" style="background-image: url('assets/bg-sapthapadi-1mfrGoyq.jpg'); background-size: cover; background-position: center center;">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 text-center pt-8 sm:pt-12 px-4">
+              <h3 class="font-script text-white text-4xl sm:text-5xl drop-shadow-lg break-words">Sapthapadi</h3>
+              <p class="mt-1 italic text-white/95 text-xs sm:text-sm">The sacred seven vows under the floral mandap</p>
+              <span class="block mt-2 text-white/80">❀</span>
+              <div class="mt-3 sm:mt-5 space-y-2 sm:space-y-3 text-white">
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Date</p>
+                  <p class="font-serif text-sm sm:text-base">SUN · July 19, 2026</p>
+                </div>
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Time</p>
+                  <p class="font-serif text-sm sm:text-base">03:48 PM</p>
+                </div>
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Venue</p>
+                  <p class="font-serif text-xs sm:text-sm px-2 line-clamp-2">Fulai Garden, Zirapwadi, Phaltan, Satara</p>
+                </div>
+              </div>
+              <div class="mt-4 text-rose text-xl">🦋</div>
+            </div>
+            <div class="relative z-10 w-full flex justify-center mt-auto">
+              <img alt="Sapthapadi couple" class="block h-auto pointer-events-none drop-shadow-md select-none" src="assets/couple-sapthapadi-i1fNqUwJ.png" style="width: 65%;" />
+            </div>
+          </article>
+
+          <!-- 5. Varmala -->
+          <article class="relative rounded-2xl overflow-hidden shadow-xl mx-auto w-full max-w-md aspect-[9/16] flex flex-col justify-between pb-4" style="background-image: url('assets/bg-varmala-uQZhWrdG.jpg'); background-size: cover; background-position: center center;">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 text-center pt-8 sm:pt-12 px-4">
+              <h3 class="font-script text-white text-4xl sm:text-5xl drop-shadow-lg break-words">Varmala</h3>
+              <p class="mt-1 italic text-white/95 text-xs sm:text-sm">The exchange of garlands and a joyous celebration</p>
+              <span class="block mt-2 text-white/80">❀</span>
+              <div class="mt-3 sm:mt-5 space-y-2 sm:space-y-3 text-white">
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Date</p>
+                  <p class="font-serif text-sm sm:text-base">SUN · July 19, 2026</p>
+                </div>
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Time</p>
+                  <p class="font-serif text-sm sm:text-base">06:15 PM</p>
+                </div>
+                <div>
+                  <p class="font-cinzel tracking-[0.25em] text-[9px] sm:text-[10px] text-white/70">Venue</p>
+                  <p class="font-serif text-xs sm:text-sm px-2 line-clamp-2">Fulai Garden, Zirapwadi, Phaltan, Satara</p>
+                </div>
+              </div>
+              <div class="mt-4 text-rose text-xl">🦋</div>
+            </div>
+            <div class="relative z-10 w-full flex justify-center mt-auto">
+              <img alt="Varmala couple" class="block h-auto pointer-events-none drop-shadow-md select-none" src="assets/couple-varmala-D-eq2WzW.png" style="width: 65%;" />
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Awaiting Your Noble Presence Section -->
+      <section class="py-14 sm:py-20 px-4 sm:px-6 text-center bg-cream">
+        <h2 class="font-script text-rose text-4xl sm:text-6xl leading-tight whitespace-pre-line">Awaiting Your Noble Presence</h2>
+        <span class="block mt-3 text-gold-deep">❀</span>
+        <p class="mt-6 max-w-xl mx-auto italic text-foreground/80 text-sm sm:text-base">Because meeting two souls requires twice the fun — and you!</p>
+        <div class="mt-4 text-2xl">🦋</div>
+      </section>
+
+      <!-- The Families Section -->
+      <section class="py-14 sm:py-20 px-4 sm:px-6 text-center bg-sage-soft">
+        <p class="font-cinzel tracking-[0.3em] text-sage-deep text-xs sm:text-sm">WITH LOVE</p>
+        <h2 class="mt-2 font-script text-rose text-4xl sm:text-6xl">The Families</h2>
+        <span class="block mt-3 text-gold-deep">❀</span>
+
+        <div class="mt-8 sm:mt-10 grid sm:grid-cols-2 gap-5 sm:gap-6 max-w-3xl mx-auto">
+          <!-- Family 1 -->
+          <div class="rounded-xl border border-gold/40 bg-cream/80 px-4 sm:px-6 py-6 sm:py-8">
+            <p class="font-cinzel tracking-[0.2em] text-[10px] sm:text-xs text-sage-deep">AWAITING YOUR GRACIOUS PRESENCE</p>
+            <span class="block mt-3 text-gold-deep">❀</span>
+            <p class="mt-4 text-base sm:text-lg">Mr. Sanjay Deshmukh</p>
+            <p class="text-base sm:text-lg">Mrs. Seema Deshmukh</p>
+          </div>
+
+          <!-- Family 2 -->
+          <div class="rounded-xl border border-gold/40 bg-cream/80 px-4 sm:px-6 py-6 sm:py-8">
+            <p class="font-cinzel tracking-[0.2em] text-[10px] sm:text-xs text-sage-deep">AWAITING YOUR GRACIOUS PRESENCE</p>
+            <span class="block mt-3 text-gold-deep">❀</span>
+            <p class="mt-4 text-base sm:text-lg">Mr. Dasharath Yadav</p>
+            <p class="text-base sm:text-lg">Mrs. Ujjwala Yadav</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Venue & Map Section -->
+      <section class="py-14 sm:py-20 px-4 sm:px-6 bg-cream text-center">
+        <p class="font-cinzel tracking-[0.3em] text-sage-deep text-xs sm:text-sm">Where We Celebrate</p>
+        <h2 class="mt-2 font-script text-rose text-4xl sm:text-6xl">Fulai Garden Hall</h2>
+        <span class="block mt-3 text-gold-deep">❀</span>
+        <p class="mt-6 text-foreground/85 text-sm sm:text-base px-2">Fulai Garden, Zirapwadi, Phaltan, Satara, Maharashtra</p>
+
+        <div class="mt-8 max-w-2xl mx-auto rounded-xl overflow-hidden border border-gold/40 shadow">
+          <iframe title="Venue map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3795.3456227519414!2d74.45045007848168!3d17.96265004223526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3bb20df01328f%3A0xe6733f49e10584bf!2sFulai%20Garden%20Hall!5e0!3m2!1sen!2sin!4v1781690362707!5m2!1sen!2sin" width="100%" height="340" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="h-[240px] sm:h-[340px] w-full" style="border: 0px;"></iframe>
+        </div>
+
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Fulai+Garden+Hall+Zirapwadi+Phaltan+Satara" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 rounded-full gradient-gold text-white px-5 sm:px-7 py-2.5 sm:py-3 shadow-gold hover:scale-105 transition-transform">
+          <span>📍</span>
+          <span class="font-cinzel tracking-widest text-xs sm:text-sm">Get Directions</span>
+        </a>
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="bg-maroon text-cream py-12 sm:py-16 px-4 sm:px-6 text-center animate-fade-in">
+        <p class="font-cinzel tracking-[0.3em] text-xs sm:text-sm">WITH LOVE</p>
+        <h3 class="mt-3 font-script text-4xl sm:text-5xl md:text-6xl break-words">Rushikesh &amp; Prajakta</h3>
+        <div class="mt-4 text-2xl">💐</div>
+        <p class="mt-6 italic text-sm sm:text-base">19th July 2026</p>
+        <p class="mt-2 font-cinzel tracking-[0.3em] text-xs sm:text-sm text-gold">#RUSHIKIPRAJU</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Confetti Canvas Library -->
+  <script src="assets/confetti.js"></script>
+
+  <!-- Interactive Application Logic -->
+  <script src="assets/app.js"></script>
+</body>
+</html>
